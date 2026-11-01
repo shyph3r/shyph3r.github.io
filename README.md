@@ -1,52 +1,84 @@
 ﻿# Khang Vo — Personal Portfolio
 
-Portfolio tiếng Anh của Khang Vo, sinh viên Computer Science / Cybersecurity tại Arizona State University. Website tĩnh dùng HTML, CSS và JavaScript, không cần cài thư viện hoặc build.
+A personal portfolio showcasing my work in cybersecurity, software development, and robotics. I am pursuing a B.S. in Computer Science, Cybersecurity at Arizona State University, with an interest in understanding systems, investigating vulnerabilities, and improving defensive visibility.
 
-## Xem website
+[Download my resume](./Khang_Vo_Resume.pdf) · [Get in touch](mailto:kvongoc@asu.edu)
 
-Mở `index.html` trong trình duyệt hoặc dùng Live Server của VS Code. Chức năng sao chép email hoạt động trên HTTPS/localhost; nếu trình duyệt không cho phép, trang hướng dẫn sao chép trực tiếp.
+## Overview
 
-## Nội dung
+The website brings together my technical projects, education, practical training, and leadership experience in a responsive, accessible layout.
 
-- Giới thiệu, học vấn tại ASU và VNU-HCM University of Technology.
-- Dự án nổi bật Security & Attack Homelab, cùng Derich Robots và Mobile App Projects.
-- pwn.college Orange Belt, kinh nghiệm gia sư toán, thành tích CTF và lập trình, Imagine Cup Junior.
-- Kỹ năng, liên hệ và tải `Khang_Vo_Resume.pdf`.
+Featured work includes:
 
-Thông tin và liên kết được chuyển từ resume người dùng cung cấp. Hình robotics/mobile là minh họa bằng CSS, được ghi rõ trên giao diện; không phải ảnh chụp sản phẩm thực tế. Sơ đồ homelab thể hiện kiến trúc mô tả trong resume. Chỉ số trên 90% của homelab là mức độ khớp kết quả kiểm thử với cảnh báo Wazuh trong lab, không phải tỷ lệ phát hiện tổng quát.
+- **Security & Attack Homelab** — An isolated environment for web security testing, centralized logging with Nginx and Wazuh, custom detection rules, and Python-based detection validation.
+- **Derich Robots** — A team robotics project combining mechanical design, Arduino programming, and sensor and motor control.
+- **Mobile App Projects** — Applications built with React Native and Java, including calculator and reading-tool features.
 
-Resume dùng chung một liên kết Google Drive cho Homelab và Derich Robots; website giữ nguyên hai liên kết đó. Chưa có GitHub/LinkedIn cá nhân trong resume nên không thêm liên kết phỏng đoán. Quyền truy cập các thư mục Drive chưa được kiểm tra.
+Additional sections cover cybersecurity training through pwn.college, mathematics tutoring, competition achievements, and technical skills.
 
-## Chỉnh sửa
+## Technology
 
-- `index.html`: nội dung hiển thị, email, điện thoại, các liên kết và metadata.
-- `script.js`: nội dung chi tiết của ba dự án trong `projectDetails`, menu và sao chép email.
-- `styles.css`: giao diện; bảng màu nằm trong `:root`.
-- `favicon.svg`: biểu tượng chữ k.
-- `Khang_Vo_Resume.pdf`: bản resume gốc để tải xuống; thay file cùng tên khi cập nhật.
+Built with **HTML5, CSS3, and vanilla JavaScript**. No package installation, build step, or backend is required.
 
-Font Be Vietnam Pro tải từ Google Fonts, có Arial/sans-serif dự phòng. Không có backend hay analytics.
+- Responsive layouts for desktop and mobile screens.
+- Native project-detail dialogs and a collapsible mobile menu.
+- Keyboard navigation, visible focus indicators, a skip link, and reduced-motion support.
+- Downloadable resume and an email-copy action.
+- Relative asset paths for GitHub Pages compatibility.
 
-## Deploy GitHub Pages
+Typography uses Be Vietnam Pro from Google Fonts, with local system-font fallbacks.
 
-1. Tạo repository, ví dụ `portfolio`.
-2. Upload `index.html`, `styles.css`, `script.js`, `favicon.svg`, `Khang_Vo_Resume.pdf`, `.nojekyll`, `.gitignore` và `README.md` vào thư mục gốc nhánh `main`.
-3. Trong GitHub **Settings → Pages → Build and deployment**, chọn **Deploy from a branch**, nhánh `main`, thư mục `/ (root)`, rồi **Save**.
-4. Xem URL GitHub trả về sau khi deployment hoàn tất. Các đường dẫn tài nguyên tương đối hỗ trợ repository Pages.
+## Run Locally
 
-Nếu dùng Git và thư mục chưa có Git/remote:
+Open `index.html` directly in a modern browser. For local development, you can also serve the project with the Live Server extension in Visual Studio Code.
 
-```sh
-git init
-git add index.html styles.css script.js favicon.svg Khang_Vo_Resume.pdf .nojekyll .gitignore README.md
-git commit -m "Build Khang Vo cybersecurity portfolio"
-git branch -M main
-git remote add origin https://github.com/<username>/portfolio.git
-git push -u origin main
+The email-copy action requires clipboard access, typically available over HTTPS or localhost. If access is unavailable, the website prompts visitors to copy the address manually.
+
+## Project Structure
+
+```text
+.
+├── index.html             # Page content, navigation, and metadata
+├── styles.css             # Layout, typography, and responsive styles
+├── script.js              # Project details, dialogs, menu, and clipboard interaction
+├── favicon.svg            # Personal monogram
+├── Khang_Vo_Resume.pdf     # Downloadable resume
+├── .nojekyll               # Bypasses Jekyll processing on GitHub Pages
+├── .gitignore             # Git exclusions
+└── README.md              # Project documentation
 ```
 
-Thay `<username>` bằng tài khoản thật. `test.py` không cần đưa lên website.
+## Deployment
 
-## Kiểm tra trước khi gửi nhà tuyển dụng
+The website can be hosted on GitHub Pages or another static hosting service.
 
-Kiểm tra website trên máy tính và điện thoại, tải resume, mở chi tiết cả ba dự án và thử các liên kết Drive trong cửa sổ ẩn danh để xác nhận nhà tuyển dụng có quyền xem. Có thể thêm GitHub/LinkedIn và ảnh sản phẩm thật khi có.
+For GitHub Pages:
+
+1. Push the website files, including `Khang_Vo_Resume.pdf` and `.nojekyll`, to the repository's `main` branch.
+2. Open the repository's **Settings → Pages**.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Select **main** and **/ (root)**, then save.
+5. Once deployment completes, open the published URL displayed in the Pages settings.
+
+No build command or environment variables are needed.
+
+## Maintenance
+
+| File | What to update |
+| --- | --- |
+| `index.html` | Biography, education, project summaries, contact information, links, and page metadata. |
+| `script.js` | Detailed project descriptions and resource links in `projectDetails`. |
+| `styles.css` | Visual styles and responsive layouts; shared colors are defined in `:root`. |
+| `Khang_Vo_Resume.pdf` | Replace with the latest resume while keeping the filename unchanged. |
+| `favicon.svg` | Browser-tab icon. |
+
+Keep project summaries and dialog descriptions consistent when updating the portfolio. The robotics and mobile visuals are labeled concept illustrations; they can be replaced with screenshots or photographs of the actual projects.
+
+Before publishing an update, check the mobile layout, keyboard navigation, project dialogs, resume download, and contact actions. Confirm that linked project materials are accessible to visitors without requesting additional permissions.
+
+## Contact
+
+**Khang Vo**  
+Computer Science & Cybersecurity · Arizona State University  
+Tempe, Arizona  
+[kvongoc@asu.edu](mailto:kvongoc@asu.edu)
