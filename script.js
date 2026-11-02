@@ -25,12 +25,12 @@ const projectDetails = [
     'Added Wazuh rules for two blind spots: User-Agent-dependent suppression and SQLi bypasses returning HTTP 200.',
     'Validated 15+ scenarios using Python and the Wazuh REST API. Over 90% test-outcome agreement refers to matching lab results with alerts.'
   ] },
-  { title: 'Derich Robots', url: './derich/KK%20Robot.jpg', items: [
+  { title: 'Derich Robots', url: 'https://drive.google.com/drive/folders/1WTWrVx4elrH7LgJk95MjWhPYdADfd1DI?usp=sharing', items: [
     'Team leadership: Led a team in designing and building a robot for ball retrieval, shooting, and flag capture.',
     'Embedded programming: Programmed Arduino-based sensor and motor control systems.',
     'Mechanical engineering: Measured, fabricated, and assembled mechanical components. Project tools included Arduino and SolidWorks.'
   ] },
-  { title: 'Mobile App Projects', url: './mobile_app/Find%20books.mp4', items: [
+  { title: 'Mobile App Projects', url: 'https://drive.google.com/drive/folders/1LWmN07-GhjRDJxiO6H8Ei2JHkFtvMUEt?usp=sharing', items: [
     'Development: Built mobile applications recreating useful everyday features such as calculators and reading tools.',
     'Technologies: React Native and Java.',
     'Demo: Watch the Find Books video embedded in the project section.'
