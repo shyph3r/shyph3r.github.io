@@ -48,6 +48,7 @@ The email-copy action requires clipboard access, typically available over HTTPS 
 ├── aegis/                  # Lab walkthrough video and architecture diagram
 ├── derich/                 # Robotics team photograph
 ├── mobile_app/             # Find Books demonstration video
+├── cert/                   # pwn.college Orange Belt achievement screenshot
 ├── .nojekyll               # Bypasses Jekyll processing on GitHub Pages
 ├── .gitignore             # Git exclusions
 └── README.md              # Project documentation
@@ -59,7 +60,7 @@ The website can be hosted on GitHub Pages or another static hosting service.
 
 For GitHub Pages:
 
-1. Push the website files, including all four media folders, `Khang_Vo_Resume.pdf`, and `.nojekyll`, to the repository's `main` branch. Preserve file names and capitalization.
+1. Push the website files, including all five media folders, `Khang_Vo_Resume.pdf`, and `.nojekyll`, to the repository's `main` branch. Preserve file names and capitalization.
 2. Open the repository's **Settings → Pages**.
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Select **main** and **/ (root)**, then save.

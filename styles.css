@@ -8,3 +8,27 @@
 /* Allow media and grid content to shrink within narrow viewports. */
 .hero-copy,.portrait,.project-card,.featured-bottom>div,.about-grid>div,.skills-grid article{min-width:0}
 @media(max-width:700px){.hero,.project-grid,.about-grid,.skills-grid,.contact-section{grid-template-columns:minmax(0,1fr)}}
+/* Security engineering introduction and featured project details. */
+.hero h1{font-size:clamp(38px,3.8vw,54px);line-height:1.22;letter-spacing:-2.1px}
+.aegis-stack{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 38px 30px;border:1px solid var(--line);border-radius:6px;background:#0c151a}
+.aegis-stack>div{padding:18px 22px;border-right:1px solid var(--line)}
+.aegis-stack>div:last-child{border-right:0}
+.aegis-stack strong{display:block;font-size:18px;font-weight:500;color:var(--accent)}
+.aegis-stack span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.architecture{margin:0 38px 38px;padding-top:30px;border-top:1px solid var(--line)}
+.architecture-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:22px}
+.architecture .eyebrow{font-size:11px;margin-bottom:8px}
+.architecture h4{font-size:26px;font-weight:500;letter-spacing:-.7px;margin:0}
+.architecture figure{overflow:hidden;border:1px solid #36434c;border-radius:6px}
+.architecture img{width:100%;height:auto}
+.architecture figcaption{padding:14px 18px;font-size:13px;color:var(--muted);background:#0c151a}
+.training-card{display:grid;grid-template-columns:1fr 1.25fr;gap:35px;align-items:center;margin-top:35px;padding:30px;border:1px solid #534230;border-radius:8px;background:linear-gradient(115deg,#201b16,var(--surface) 65%)}
+.training-copy{min-width:0}.training-copy .eyebrow{font-size:10px;letter-spacing:1.5px;color:#f7b472;margin-bottom:16px}
+.training-copy h3{font-size:28px}.training-copy h3>span{display:block;color:#ffb36e;margin-top:5px}
+.training-copy>p:not(.eyebrow){font-size:16px;color:var(--muted);margin-top:18px}
+.training-date{display:block;font-size:12px;color:var(--muted);margin-top:18px}
+.training-copy .text-link{color:#ffbc80;border-color:#755438;margin-top:13px}
+.training-image{position:relative;display:block;overflow:hidden;border:1px solid #484137;border-radius:6px;background:#101010}
+.training-image img{width:100%;height:auto}.training-image>span{position:absolute;bottom:12px;right:15px;color:#ffbc80;font-size:23px}
+@media(max-width:1000px){.hero h1{font-size:clamp(33px,4vw,44px);letter-spacing:-1.5px}.aegis-stack{margin-inline:28px}.aegis-stack>div{padding:16px}.aegis-stack span{font-size:11px}.architecture{margin-inline:28px}.training-card{gap:25px;padding:25px}}
+@media(max-width:700px){.hero h1{font-size:clamp(30px,6.8vw,46px);letter-spacing:-1.2px;line-height:1.3}.aegis-stack{margin:0 22px 24px;grid-template-columns:repeat(2,minmax(0,1fr))}.aegis-stack>div{padding:14px}.aegis-stack>div:nth-child(2){border-right:0}.aegis-stack>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.aegis-stack strong{font-size:17px}.aegis-stack span{font-size:11px}.architecture{margin:0 22px 25px;padding-top:24px}.architecture-heading{display:block}.architecture-heading>.text-link{margin-top:12px}.architecture h4{font-size:23px}.architecture figcaption{font-size:12px;padding:12px}.training-card{grid-template-columns:minmax(0,1fr);padding:24px;gap:25px}.training-copy h3{font-size:27px}.training-copy>p:not(.eyebrow){font-size:16px}}
