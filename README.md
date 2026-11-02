@@ -10,7 +10,7 @@ The website brings together my technical projects, education, practical training
 
 Featured work includes:
 
-- **Security & Attack Homelab** — An isolated environment for web security testing, centralized logging with Nginx and Wazuh, custom detection rules, and Python-based detection validation.
+- **Aegis — Security & Attack Homelab** — An isolated environment for web security testing, centralized logging with Nginx and Wazuh, custom detection rules, and Python-based detection validation. Includes an embedded walkthrough and the lab architecture diagram.
 - **Derich Robots** — A team robotics project combining mechanical design, Arduino programming, and sensor and motor control.
 - **Mobile App Projects** — Applications built with React Native and Java, including calculator and reading-tool features.
 
@@ -20,7 +20,8 @@ Additional sections cover cybersecurity training through pwn.college, mathematic
 
 Built with **HTML5, CSS3, and vanilla JavaScript**. No package installation, build step, or backend is required.
 
-- Responsive layouts for desktop and mobile screens.
+- Dark theme with mint accents, larger typography, and responsive layouts.
+- Personal photography, a robotics team photograph, and embedded Aegis and Find Books demos.
 - Native project-detail dialogs and a collapsible mobile menu.
 - Keyboard navigation, visible focus indicators, a skip link, and reduced-motion support.
 - Downloadable resume and an email-copy action.
@@ -43,6 +44,10 @@ The email-copy action requires clipboard access, typically available over HTTPS 
 ├── script.js              # Project details, dialogs, menu, and clipboard interaction
 ├── favicon.svg            # Personal monogram
 ├── Khang_Vo_Resume.pdf     # Downloadable resume
+├── pic/                    # Portrait photograph
+├── aegis/                  # Lab walkthrough video and architecture diagram
+├── derich/                 # Robotics team photograph
+├── mobile_app/             # Find Books demonstration video
 ├── .nojekyll               # Bypasses Jekyll processing on GitHub Pages
 ├── .gitignore             # Git exclusions
 └── README.md              # Project documentation
@@ -54,7 +59,7 @@ The website can be hosted on GitHub Pages or another static hosting service.
 
 For GitHub Pages:
 
-1. Push the website files, including `Khang_Vo_Resume.pdf` and `.nojekyll`, to the repository's `main` branch.
+1. Push the website files, including all four media folders, `Khang_Vo_Resume.pdf`, and `.nojekyll`, to the repository's `main` branch. Preserve file names and capitalization.
 2. Open the repository's **Settings → Pages**.
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Select **main** and **/ (root)**, then save.
@@ -72,7 +77,7 @@ No build command or environment variables are needed.
 | `Khang_Vo_Resume.pdf` | Replace with the latest resume while keeping the filename unchanged. |
 | `favicon.svg` | Browser-tab icon. |
 
-Keep project summaries and dialog descriptions consistent when updating the portfolio. The robotics and mobile visuals are labeled concept illustrations; they can be replaced with screenshots or photographs of the actual projects.
+Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and videos are served directly from the media folders. The Aegis video loads on demand and uses the architecture diagram as its poster; the mobile demo loads metadata only. Both players have native playback controls and do not autoplay. Starting one video pauses the other.
 
 Before publishing an update, check the mobile layout, keyboard navigation, project dialogs, resume download, and contact actions. Confirm that linked project materials are accessible to visitors without requesting additional permissions.
 

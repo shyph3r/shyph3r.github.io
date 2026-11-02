@@ -19,22 +19,21 @@ document.addEventListener('keydown', event => {
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
 const projectDetails = [
-  { title: 'Security & Attack Homelab', url: 'https://drive.google.com/drive/folders/1WTWrVx4elrH7LgJk95MjWhPYdADfd1DI?usp=sharing', items: [
-    'Environment: Built an isolated security lab using Dockerized OWASP Juice Shop to simulate web attacks and investigate security events.',
-    'Offensive testing: Reproduced SQL injection and IDOR vulnerabilities using Burp Suite. Developed custom Nuclei templates to automate checks and discover exposed API documentation and monitoring endpoints.',
-    'Visibility: Engineered a centralized logging pipeline with an Nginx reverse proxy, capturing HTTP request/response metadata and integrating web and system logs with Wazuh SIEM.',
-    'Detection engineering: Identified two blind spots — User-Agent-dependent rule suppression and SQLi authentication bypasses returning HTTP 200. Implemented custom Wazuh rules to improve visibility.',
-    'Validation: Developed Python tools to execute 15+ control scenarios and correlate results with Wazuh Indexer alerts through its REST API, achieving over 90% test-outcome agreement within the lab.'
+  { title: 'Aegis — Security & Attack Homelab', url: './aegis/infrastructure.png', items: [
+    'Built an isolated lab with OWASP Juice Shop, Docker, Nginx, and Wazuh.',
+    'Reproduced SQLi and IDOR with Burp Suite; automated checks with custom Nuclei templates.',
+    'Added Wazuh rules for two blind spots: User-Agent-dependent suppression and SQLi bypasses returning HTTP 200.',
+    'Validated 15+ scenarios using Python and the Wazuh REST API. Over 90% test-outcome agreement refers to matching lab results with alerts.'
   ] },
-  { title: 'Derich Robots', url: 'https://drive.google.com/drive/folders/1WTWrVx4elrH7LgJk95MjWhPYdADfd1DI?usp=sharing', items: [
+  { title: 'Derich Robots', url: './derich/KK%20Robot.jpg', items: [
     'Team leadership: Led a team in designing and building a robot for ball retrieval, shooting, and flag capture.',
     'Embedded programming: Programmed Arduino-based sensor and motor control systems.',
     'Mechanical engineering: Measured, fabricated, and assembled mechanical components. Project tools included Arduino and SolidWorks.'
   ] },
-  { title: 'Mobile App Projects', url: 'https://drive.google.com/drive/folders/1LWmN07-GhjRDJxiO6H8Ei2JHkFtvMUEt?usp=sharing', items: [
+  { title: 'Mobile App Projects', url: './mobile_app/Find%20books.mp4', items: [
     'Development: Built mobile applications recreating useful everyday features such as calculators and reading tools.',
     'Technologies: React Native and Java.',
-    'Project materials: Explore the linked folder for supporting work included with my resume.'
+    'Demo: Watch the Find Books video embedded in the project section.'
   ] }
 ];
 const dialog = document.querySelector('#project-dialog');
@@ -53,6 +52,11 @@ document.querySelectorAll('[data-project]').forEach(button => {
     dialog.showModal();
   });
 });
+// Keep audio from different project demos from overlapping.
+const projectVideos = document.querySelectorAll('video');
+projectVideos.forEach(video => video.addEventListener('play', () => {
+  projectVideos.forEach(other => { if (other !== video) other.pause(); });
+}));
 document.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
 dialog.addEventListener('click', event => { if (event.target === dialog) {
   const bounds = dialog.getBoundingClientRect();
