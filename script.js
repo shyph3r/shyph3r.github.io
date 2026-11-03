@@ -76,3 +76,119 @@ document.querySelector('#copy-email').addEventListener('click', async () => {
   toast.classList.add('visible');
   toastTimeout = setTimeout(() => toast.classList.remove('visible'), 4000);
 });
+// Start the demo with a clear invitation, while retaining native video controls.
+const aegisVideo = document.querySelector('#aegis-video');
+const videoLaunch = document.querySelector('.video-launch');
+const videoFeedback = document.querySelector('.video-feedback');
+videoLaunch.hidden = false;
+let demoStarted = false;
+function showVideoFeedback(message) {
+  videoFeedback.textContent = message;
+  videoFeedback.hidden = !message;
+}
+videoLaunch.addEventListener('click', async () => {
+  videoLaunch.hidden = true;
+  showVideoFeedback('Loading the walkthrough…');
+  aegisVideo.focus();
+  try {
+    await aegisVideo.play();
+  } catch {
+    if (!demoStarted) videoLaunch.hidden = false;
+    showVideoFeedback('Unable to start playback. Try again or use “Open video” below.');
+  }
+});
+aegisVideo.addEventListener('playing', () => {
+  demoStarted = true;
+  videoLaunch.hidden = true;
+  showVideoFeedback('');
+});
+aegisVideo.addEventListener('waiting', () => {
+  if (!aegisVideo.paused) showVideoFeedback('Buffering the video…');
+});
+aegisVideo.addEventListener('pause', () => showVideoFeedback(''));
+aegisVideo.addEventListener('ended', () => showVideoFeedback('Walkthrough complete. Replay using the video controls, or explore the architecture below.'));
+aegisVideo.addEventListener('error', () => {
+  videoLaunch.hidden = true;
+  showVideoFeedback('This video could not be loaded. Use “Open video” below to view it directly.');
+});
+
+// Keep full-size images accessible without leaving the portfolio.
+const imageDialog = document.querySelector('#image-dialog');
+const imagePreview = document.querySelector('#image-preview');
+const imageViewport = document.querySelector('.image-viewport');
+const imageZoom = document.querySelector('#image-zoom');
+function resetImageZoom() {
+  imageViewport.classList.remove('zoomed');
+  imageZoom.setAttribute('aria-pressed', 'false');
+  imageZoom.textContent = 'Zoom in';
+  imageViewport.scrollTop = imageViewport.scrollLeft = 0;
+}
+const imageTitles = {
+  './aegis/infrastructure.png': 'Aegis — Lab architecture',
+  './derich/KK%20Robot.jpg': 'Derich — Robotics team',
+  './cert/Orange%20Belt.png': 'pwn.college — Orange Belt'
+};
+document.querySelectorAll('a[href]').forEach(link => {
+  const title = imageTitles[link.getAttribute('href')];
+  if (!title) return;
+  link.setAttribute('aria-haspopup', 'dialog');
+  link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    event.preventDefault();
+    resetImageZoom();
+    imagePreview.src = link.href;
+    imagePreview.alt = link.querySelector('img')?.alt || title;
+    document.querySelector('#image-title').textContent = title;
+    document.querySelector('#image-original').href = link.href;
+    imageDialog.showModal();
+  });
+});
+imageZoom.addEventListener('click', () => {
+  const zoomed = imageViewport.classList.toggle('zoomed');
+  imageZoom.setAttribute('aria-pressed', String(zoomed));
+  imageZoom.textContent = zoomed ? 'Fit image' : 'Zoom in';
+});
+document.querySelector('#image-close').addEventListener('click', () => imageDialog.close());
+imageDialog.addEventListener('close', resetImageZoom);
+imageDialog.addEventListener('click', event => {
+  if (event.target !== imageDialog) return;
+  const bounds = imageDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) imageDialog.close();
+});
+
+// Scroll position, current section, and a shortcut back to the introduction.
+const sectionLinks = [...navigation.querySelectorAll('a[href^="#"]')];
+const scrollProgress = document.querySelector('.reading-progress');
+const backTop = document.querySelector('#back-top');
+let scrollScheduled = false;
+function updateScrollUI() {
+  const maximum = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.transform = `scaleX(${maximum > 0 ? Math.min(1, Math.max(0, window.scrollY / maximum)) : 0})`;
+  backTop.hidden = window.scrollY < 700;
+  let current = null;
+  sectionLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section && section.getBoundingClientRect().top <= 150) current = link;
+  });
+  if (maximum > 0 && window.scrollY >= maximum - 4) current = sectionLinks.at(-1);
+  sectionLinks.forEach(link => {
+    if (link === current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+  scrollScheduled = false;
+}
+function scheduleScrollUI() {
+  if (!scrollScheduled) {
+    scrollScheduled = true;
+    requestAnimationFrame(updateScrollUI);
+  }
+}
+window.addEventListener('scroll', scheduleScrollUI, { passive: true });
+window.addEventListener('resize', scheduleScrollUI);
+window.addEventListener('load', scheduleScrollUI);
+backTop.addEventListener('click', () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'instant' : 'smooth' });
+  document.querySelector('.brand').focus({ preventScroll: true });
+});
+updateScrollUI();
