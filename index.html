@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#090f14">
   <title>Khang Vo — Cybersecurity &amp; Computer Science</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=20261104-timeline">
+  <script src="./script.js?v=20261104-timeline" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +31,8 @@
   <div class="focus-strip wrap"><span>APPLICATION SECURITY</span><span aria-hidden="true">+</span><span>DETECTION ENGINEERING</span><span aria-hidden="true">+</span><span>SECURITY AUTOMATION</span></div>
   <section class="section wrap" id="projects" aria-labelledby="projects-title">
     <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="projects-title">Less theory.<br><em>More building.</em></h2></div><p>Real projects. Hands-on learning.</p></div>
-    <article class="featured-project">
+    <article class="featured-project separated-project">
+      <div class="aegis-player-card">
       <div class="featured-heading"><div><p class="eyebrow">FEATURED / SECURITY LAB</p><h3>Aegis<span class="accent">.</span></h3><p>Simulate attacks. Collect logs. Validate detections.</p></div></div>
       <div class="aegis-stack" aria-label="Aegis technology stack">
         <div><strong>Wazuh</strong><span>Detection &amp; monitoring</span></div>
@@ -40,8 +41,9 @@
         <div><strong>Docker</strong><span>Application isolation</span></div>
       </div>
       <figure class="video-block"><div class="video-stage"><video id="aegis-video" controls playsinline preload="none" poster="./aegis/demo-cover.svg" aria-label="Aegis security lab video demonstration" aria-describedby="aegis-caption"><source src="./aegis/aegis.mp4" type="video/mp4">Your browser does not support embedded video. <a href="./aegis/aegis.mp4">Open the Aegis demo</a>.</video><button class="video-launch" type="button" aria-label="Play the Aegis project walkthrough" aria-controls="aegis-video" hidden><span class="play-disc" aria-hidden="true">▶</span><span>Watch the demo <span aria-hidden="true">↗</span></span></button></div><p class="video-feedback" role="status" hidden></p><figcaption id="aegis-caption"><span><span class="status-dot"></span> AEGIS / PROJECT WALKTHROUGH</span><a href="./aegis/aegis.mp4" target="_blank" rel="noopener">Open video ↗</a></figcaption></figure>
-      <section class="video-chapters" aria-labelledby="chapters-title">
-        <div class="chapters-heading"><h4 id="chapters-title">Explore the walkthrough</h4><p>Jump to the part you want to see.</p></div>
+      </div>
+      <section class="video-chapters" id="aegis-timeline" aria-labelledby="chapters-title">
+        <div class="chapters-heading"><h4 id="chapters-title">Video timeline</h4><p>5 chapters · Click a timestamp to play.</p></div>
         <ol class="chapter-list">
           <li><a href="./aegis/aegis.mp4#t=0" data-chapter="0" aria-controls="aegis-video"><span class="chapter-number">01</span><span class="chapter-copy"><strong>Infrastructure</strong><span>00:00 – 01:55</span></span><span class="chapter-play" aria-hidden="true">▶</span></a></li>
           <li><a href="./aegis/aegis.mp4#t=115" data-chapter="115" aria-controls="aegis-video"><span class="chapter-number">02</span><span class="chapter-copy"><strong>Attack</strong><span>01:55 – 08:10</span></span><span class="chapter-play" aria-hidden="true">▶</span></a></li>
@@ -50,11 +52,12 @@
           <li><a href="./aegis/aegis.mp4#t=752" data-chapter="752" aria-controls="aegis-video"><span class="chapter-number">05</span><span class="chapter-copy"><strong>Centralized proxy &amp; automation script</strong><span>12:32 – End</span></span><span class="chapter-play" aria-hidden="true">▶</span></a></li>
         </ol>
       </section>
-      <div class="featured-bottom"><div><p class="project-summary">An isolated homelab connecting web attack testing with Wazuh monitoring and Python-based validation.</p><div class="project-actions"><button class="text-link" data-project="0">Project details ↗</button><a class="text-link" href="./aegis/infrastructure.png" target="_blank" rel="noopener">View architecture ↗</a></div></div><div class="project-results"><div><strong>15+</strong><span>control scenarios</span></div><div><strong>&gt;90%</strong><span>test-outcome agreement</span></div><div><strong>2</strong><span>detection blind spots found</span></div></div></div>
+      <div class="aegis-detail-card"><div class="featured-bottom"><div><p class="project-summary">An isolated homelab connecting web attack testing with Wazuh monitoring and Python-based validation.</p><div class="project-actions"><button class="text-link" data-project="0">Project details ↗</button><a class="text-link" href="./aegis/infrastructure.png" target="_blank" rel="noopener">View architecture ↗</a></div></div><div class="project-results"><div><strong>15+</strong><span>control scenarios</span></div><div><strong>&gt;90%</strong><span>test-outcome agreement</span></div><div><strong>2</strong><span>detection blind spots found</span></div></div></div>
       <section class="architecture" aria-labelledby="architecture-title">
         <div class="architecture-heading"><div><p class="eyebrow">INSIDE AEGIS</p><h4 id="architecture-title">How the lab connects.</h4></div><a class="text-link" href="./aegis/infrastructure.png" target="_blank" rel="noopener">Open full diagram ↗</a></div>
         <figure><a href="./aegis/infrastructure.png" target="_blank" rel="noopener" aria-label="View the full Aegis infrastructure diagram"><img src="./aegis/infrastructure.png" alt="Aegis architecture: Kali testing VM sends requests through Nginx and ModSecurity to Dockerized Juice Shop. Wazuh collects logs; Python validates alerts through the REST API." width="1672" height="941" loading="lazy"></a><figcaption>Attack simulation → log collection → detection → validation.</figcaption></figure>
       </section>
+    </div>
     </article>
     <div class="project-grid">
       <article class="project-card"><a class="project-image" href="./derich/KK%20Robot.jpg" target="_blank" rel="noopener" aria-label="View full Derich team photograph"><img src="./derich/KK%20Robot.jpg" alt="Derich robotics team with their robots at the competition" width="2048" height="1536" loading="lazy"><span class="image-open" aria-hidden="true">↗</span></a><div class="project-copy"><p class="eyebrow">02 / ROBOTICS</p><h3><a href="https://drive.google.com/drive/folders/1WTWrVx4elrH7LgJk95MjWhPYdADfd1DI?usp=sharing" target="_blank" rel="noopener noreferrer">Derich Robots ↗</a></h3><p>Led a team to build a robot for ball retrieval, shooting, and flag capture.</p><div class="tags"><span>Arduino</span><span>SolidWorks</span><span>Team leadership</span></div><a class="text-link" href="https://drive.google.com/drive/folders/1WTWrVx4elrH7LgJk95MjWhPYdADfd1DI?usp=sharing" target="_blank" rel="noopener noreferrer">View project ↗</a></div></article>

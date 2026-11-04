@@ -56,3 +56,15 @@ nav a[aria-current="location"]{color:var(--accent);text-decoration:underline;tex
 .chapter-list a:hover{background:#192c24;border-color:#537b66}.chapter-list a[aria-current="true"]{border-color:var(--accent);background:#172b22}.chapter-list a[aria-current="true"] .chapter-number{color:var(--accent)}
 @media(max-width:1000px){.video-chapters{padding:25px 28px}}
 @media(max-width:700px){.video-chapters{padding:24px 22px}.chapters-heading{display:block}.chapters-heading p{margin-top:8px}.chapter-list{grid-template-columns:minmax(0,1fr)}.chapter-list li:last-child{grid-column:auto}.chapter-list a{padding:15px}.chapter-copy strong{font-size:15px}}
+/* The timeline is a standalone panel, outside the video card. */
+.separated-project{background:transparent;border:0;border-radius:0;overflow:visible}
+.aegis-player-card,.aegis-detail-card{background:var(--surface);border:1px solid #30443f;border-radius:9px;overflow:hidden}
+.separated-project .video-chapters{margin:28px 0;padding:28px 30px;border:1px solid #4f8069;border-left:4px solid var(--accent);border-radius:9px;background:#15251e;box-shadow:0 8px 30px #0002}
+.separated-project .chapters-heading h4{font-size:25px;color:var(--accent)}
+.separated-project .chapter-list{grid-template-columns:repeat(5,minmax(0,1fr))}
+.separated-project .chapter-list li:last-child{grid-column:auto}
+.separated-project .chapter-list a{align-items:flex-start;gap:9px;padding:16px 12px}
+.separated-project .chapter-copy>span{color:#c5dad0;font-size:13px}
+.separated-project .chapter-play{font-size:10px;padding-top:4px}
+@media(max-width:1100px){.separated-project .chapter-list{grid-template-columns:repeat(3,minmax(0,1fr))}.separated-project .chapter-list li:last-child{grid-column:span 2}}
+@media(max-width:700px){.separated-project .video-chapters{margin:22px 0;padding:24px 18px}.separated-project .chapter-list{grid-template-columns:minmax(0,1fr)}.separated-project .chapter-list li:last-child{grid-column:auto}.separated-project .chapter-list a{padding:16px;align-items:center}.separated-project .chapters-heading h4{font-size:24px}}
