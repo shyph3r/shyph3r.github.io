@@ -86,7 +86,7 @@ function showVideoFeedback(message) {
   videoFeedback.textContent = message;
   videoFeedback.hidden = !message;
 }
-videoLaunch.addEventListener('click', async () => {
+async function playAegis() {
   videoLaunch.hidden = true;
   showVideoFeedback('Loading the walkthrough…');
   aegisVideo.focus();
@@ -96,7 +96,42 @@ videoLaunch.addEventListener('click', async () => {
     if (!demoStarted) videoLaunch.hidden = false;
     showVideoFeedback('Unable to start playback. Try again or use “Open video” below.');
   }
+}
+videoLaunch.addEventListener('click', playAegis);
+const chapterLinks = [...document.querySelectorAll('[data-chapter]')];
+let pendingChapter = null;
+function updateChapter() {
+  let active = chapterLinks[0];
+  chapterLinks.forEach(link => {
+    if (aegisVideo.currentTime >= Number(link.dataset.chapter)) active = link;
+  });
+  chapterLinks.forEach(link => {
+    if (link === active) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  });
+}
+chapterLinks.forEach(link => link.addEventListener('click', event => {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+  event.preventDefault();
+  const seconds = Number(link.dataset.chapter);
+  if (aegisVideo.readyState >= 1) {
+    aegisVideo.currentTime = seconds;
+    pendingChapter = null;
+  } else pendingChapter = seconds;
+  playAegis();
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  aegisVideo.scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth', block: 'center' });
+}));
+aegisVideo.addEventListener('loadedmetadata', () => {
+  if (pendingChapter !== null) {
+    aegisVideo.currentTime = pendingChapter;
+    pendingChapter = null;
+  }
+  updateChapter();
 });
+aegisVideo.addEventListener('timeupdate', updateChapter);
+aegisVideo.addEventListener('seeked', updateChapter);
+updateChapter();
 aegisVideo.addEventListener('playing', () => {
   demoStarted = true;
   videoLaunch.hidden = true;

@@ -1,4 +1,4 @@
-﻿# Khang Vo — Personal Portfolio
+# Khang Vo — Personal Portfolio
 
 A personal portfolio showcasing my work in cybersecurity, software development, and robotics. I am pursuing a B.S. in Computer Science, Cybersecurity at Arizona State University, with an interest in understanding systems, investigating vulnerabilities, and improving defensive visibility.
 
@@ -22,7 +22,8 @@ Built with **HTML5, CSS3, and vanilla JavaScript**. No package installation, bui
 
 - Dark theme with mint accents, larger typography, and responsive layouts.
 - Personal photography, a robotics team photograph, and embedded Aegis and Find Books demos.
-- Native project-detail dialogs and a collapsible mobile menu.
+- Native project-detail dialogs, image previews with zoom, and a collapsible mobile menu.
+- Sticky navigation with active-section indicators, reading progress, and a back-to-top shortcut.
 - Keyboard navigation, visible focus indicators, a skip link, and reduced-motion support.
 - Downloadable resume and an email-copy action.
 - Relative asset paths for GitHub Pages compatibility.
@@ -78,7 +79,7 @@ No build command or environment variables are needed.
 | `Khang_Vo_Resume.pdf` | Replace with the latest resume while keeping the filename unchanged. |
 | `favicon.svg` | Browser-tab icon. |
 
-Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and videos are served directly from the media folders. The Aegis video loads on demand and uses the architecture diagram as its poster; the mobile demo loads metadata only. Both players have native playback controls and do not autoplay. Starting one video pauses the other.
+Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and videos are served directly from the media folders. The Aegis video loads on demand and uses a dedicated Aegis demo cover with a prominent play button; the mobile demo loads metadata only. Both players have native playback controls and do not autoplay. Starting one video pauses the other. Five clickable chapters below Aegis jump to specific sections and highlight the current chapter during playback. Update their labels and `data-chapter` start times in `index.html` when replacing the video.
 
 Before publishing an update, check the mobile layout, keyboard navigation, project dialogs, resume download, and contact actions. Confirm that linked project materials are accessible to visitors without requesting additional permissions.
 
