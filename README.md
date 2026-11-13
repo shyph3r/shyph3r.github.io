@@ -2,11 +2,17 @@
 
 A personal portfolio showcasing my work in cybersecurity, software development, and robotics. I am pursuing a B.S. in Computer Science, Cybersecurity at Arizona State University, with an interest in understanding systems, investigating vulnerabilities, and improving defensive visibility.
 
-[Download my resume](./Khang_Vo_Resume.pdf) · [Get in touch](mailto:kvongoc@asu.edu)
+[Download my resume](./Khang_Vo_Resume1311.pdf) · [Get in touch](mailto:kvongoc@asu.edu)
 
 ## Overview
 
-The website brings together my technical projects, education, practical training, and leadership experience in a responsive, accessible layout.
+The website brings together my technical projects, education, practical training, and leadership experience in a responsive, accessible layout. Aegis, Enterprise Network Security Lab, and Derich Robots each have a separate full-width project section. The network lab includes a large topology image, technology overview, network zones, and implementation details.
+
+Projects support direct links without displaying an additional project navigation bar:
+
+- Aegis: `https://shyph3r.github.io/#project-aegis`
+- Enterprise Network Security Lab: `https://shyph3r.github.io/#project-network`
+- Derich Robots: `https://shyph3r.github.io/#project-derich`
 
 Featured work includes:
 
@@ -44,7 +50,7 @@ The email-copy action requires clipboard access, typically available over HTTPS 
 ├── styles.css             # Layout, typography, and responsive styles
 ├── script.js              # Project details, dialogs, menu, and clipboard interaction
 ├── favicon.svg            # Personal monogram
-├── Khang_Vo_Resume.pdf     # Downloadable resume
+├── Khang_Vo_Resume1311.pdf     # Downloadable resume
 ├── pic/                    # Portrait photograph
 ├── aegis/                  # Lab walkthrough video and architecture diagram
 ├── derich/                 # Robotics team photograph
@@ -61,7 +67,7 @@ The website can be hosted on GitHub Pages or another static hosting service.
 
 For GitHub Pages:
 
-1. Push the website files, including all five media folders, `Khang_Vo_Resume.pdf`, and `.nojekyll`, to the repository's `main` branch. Preserve file names and capitalization.
+1. Push the website files, including all five media folders, `Khang_Vo_Resume1311.pdf`, and `.nojekyll`, to the repository's `main` branch. Preserve file names and capitalization.
 2. Open the repository's **Settings → Pages**.
 3. Under **Build and deployment**, select **Deploy from a branch**.
 4. Select **main** and **/ (root)**, then save.
@@ -76,7 +82,7 @@ No build command or environment variables are needed.
 | `index.html` | Biography, education, project summaries, contact information, links, and page metadata. |
 | `script.js` | Detailed project descriptions and resource links in `projectDetails`. |
 | `styles.css` | Visual styles and responsive layouts; shared colors are defined in `:root`. |
-| `Khang_Vo_Resume.pdf` | Replace with the latest resume while keeping the filename unchanged. |
+| `Khang_Vo_Resume1311.pdf` | Replace with the latest resume while keeping the filename unchanged. |
 | `favicon.svg` | Browser-tab icon. |
 
 Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and video are served directly from the media folders. The Aegis video loads on demand, uses a dedicated demo cover with a prominent play button, and retains native playback controls without autoplay. Five clickable chapters below Aegis jump to specific sections and highlight the current chapter during playback. Update their labels and `data-chapter` start times in `index.html` when replacing the video. The network topology can be opened and zoomed in the image viewer.

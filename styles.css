@@ -8,6 +8,31 @@
 /* Allow media and grid content to shrink within narrow viewports. */
 .hero-copy,.portrait,.project-card,.featured-bottom>div,.about-grid>div,.skills-grid article{min-width:0}
 @media(max-width:700px){.hero,.project-grid,.about-grid,.skills-grid,.contact-section{grid-template-columns:minmax(0,1fr)}}
+/* Full-width projects, each with its own visual boundary. */
+.project-index-nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 32px;font-size:13px}
+.project-index-nav a{padding:10px 16px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+.project-index-nav a:hover{color:var(--accent);border-color:var(--accent)}
+#projects>.project-section+.project-section{margin-top:72px}
+.network-project{background:var(--surface);border:1px solid #30443f;border-radius:9px;overflow:hidden}
+.network-project .featured-heading h3{font-size:clamp(30px,3.6vw,47px);line-height:1.25}
+.network-topology{border-block:1px solid var(--line);background:#080e13}
+.network-topology img{width:100%;height:auto;max-height:780px;object-fit:contain;background:white}
+.network-topology figcaption{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 30px;font-size:11px;letter-spacing:1px;color:var(--muted)}
+.network-topology figcaption .text-link{letter-spacing:0}
+.network-content{padding:38px}
+.network-overview{display:grid;grid-template-columns:1.3fr 1fr;gap:45px;align-items:center;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.network-content .eyebrow{font-size:11px;margin-bottom:14px}
+.network-content h4{margin:0;font-size:25px;line-height:1.4;font-weight:500;letter-spacing:-.6px}
+.network-content p{font-size:16px;color:var(--muted);margin-top:15px}
+.network-zones{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.network-zones span{padding:15px;border:1px solid #344c43;border-radius:5px;font-size:13px;color:var(--accent);background:#0c1813}
+.network-details{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+.detail-number{display:block;font:11px/1.7 monospace;letter-spacing:1px;color:var(--accent);margin-bottom:10px}
+.network-details h4{font-size:21px}.network-details p{margin-top:10px}
+.derich-project{display:grid;grid-template-columns:1.1fr 1fr;align-items:center}
+.derich-project .project-image img{height:auto;max-height:500px}
+.derich-project .project-copy{border-top:0}
+@media(max-width:700px){#projects>.project-section+.project-section{margin-top:45px}.project-index-nav{gap:8px}.project-index-nav a{font-size:12px;padding:9px 12px}.network-content{padding:25px 22px}.network-overview,.network-details,.derich-project{grid-template-columns:minmax(0,1fr);gap:25px}.network-topology figcaption{padding:14px 22px}.network-content h4{font-size:23px}.network-details h4{font-size:21px}.network-zones{gap:9px}.network-zones span{font-size:12px;padding:12px}.derich-project .project-copy{border-top:1px solid var(--line)}}
 /* Security engineering introduction and featured project details. */
 .hero h1{font-size:clamp(38px,3.8vw,54px);line-height:1.22;letter-spacing:-2.1px}
 .aegis-stack{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 38px 30px;border:1px solid var(--line);border-radius:6px;background:#0c151a}
