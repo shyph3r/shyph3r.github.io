@@ -30,10 +30,11 @@ const projectDetails = [
     'Embedded programming: Programmed Arduino-based sensor and motor control systems.',
     'Mechanical engineering: Measured, fabricated, and assembled mechanical components. Project tools included Arduino and SolidWorks.'
   ] },
-  { title: 'Mobile App Projects', url: 'https://drive.google.com/drive/folders/1LWmN07-GhjRDJxiO6H8Ei2JHkFtvMUEt?usp=sharing', items: [
-    'Development: Built mobile applications recreating useful everyday features such as calculators and reading tools.',
-    'Technologies: React Native and Java.',
-    'Demo: Watch the Find Books video embedded in the project section.'
+  { title: 'Enterprise Network Security Lab', url: './mini-network/cisco-packet-tracer.png', items: [
+    'Network design: Built a segmented enterprise network in Cisco Packet Tracer across Office, Guest, and Server zones using VLANs, Layer 3 switching, inter-VLAN routing, and IPv4 subnetting.',
+    'Routing and connectivity: Implemented OSPF, default routing, and NAT/PAT across internal and edge infrastructure for dynamic route propagation and controlled external connectivity through an ISP network.',
+    'Access control: Enforced segmentation and least-privilege access with ACLs and firewall policies, restricting Guest-to-internal and unauthorized inter-zone traffic while allowing required services and Internet access.',
+    'Troubleshooting: Diagnosed and resolved Layer 2/Layer 3, routing, access-control, and packet-forwarding failures through systematic network and packet-level investigation.'
   ] }
 ];
 const dialog = document.querySelector('#project-dialog');
@@ -161,6 +162,7 @@ function resetImageZoom() {
 const imageTitles = {
   './aegis/infrastructure.png': 'Aegis — Lab architecture',
   './derich/KK%20Robot.jpg': 'Derich — Robotics team',
+  './mini-network/cisco-packet-tracer.png': 'Enterprise Network Security Lab — Topology',
   './cert/Orange%20Belt.png': 'pwn.college — Orange Belt'
 };
 document.querySelectorAll('a[href]').forEach(link => {

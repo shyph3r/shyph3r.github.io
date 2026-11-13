@@ -12,7 +12,7 @@ Featured work includes:
 
 - **Aegis — Security & Attack Homelab** — An isolated environment for web security testing, centralized logging with Nginx and Wazuh, custom detection rules, and Python-based detection validation. Includes an embedded walkthrough and the lab architecture diagram.
 - **Derich Robots** — A team robotics project combining mechanical design, Arduino programming, and sensor and motor control.
-- **Mobile App Projects** — Applications built with React Native and Java, including calculator and reading-tool features.
+- **Enterprise Network Security Lab** — A Cisco Packet Tracer lab with Office, Guest, and Server segmentation, VLANs, Layer 3 switching, OSPF, NAT/PAT, ACLs, and firewall policies. Includes a topology image and implementation details.
 
 Additional sections cover cybersecurity training through pwn.college, mathematics tutoring, competition achievements, and technical skills.
 
@@ -21,7 +21,7 @@ Additional sections cover cybersecurity training through pwn.college, mathematic
 Built with **HTML5, CSS3, and vanilla JavaScript**. No package installation, build step, or backend is required.
 
 - Dark theme with mint accents, larger typography, and responsive layouts.
-- Personal photography, a robotics team photograph, and embedded Aegis and Find Books demos.
+- Personal photography, a robotics team photograph, an enterprise network topology, and an embedded Aegis walkthrough.
 - Native project-detail dialogs, image previews with zoom, and a collapsible mobile menu.
 - Sticky navigation with active-section indicators, reading progress, and a back-to-top shortcut.
 - Keyboard navigation, visible focus indicators, a skip link, and reduced-motion support.
@@ -48,7 +48,7 @@ The email-copy action requires clipboard access, typically available over HTTPS 
 ├── pic/                    # Portrait photograph
 ├── aegis/                  # Lab walkthrough video and architecture diagram
 ├── derich/                 # Robotics team photograph
-├── mobile_app/             # Find Books demonstration video
+├── mini-network/           # Cisco Packet Tracer topology screenshot
 ├── cert/                   # pwn.college Orange Belt achievement screenshot
 ├── .nojekyll               # Bypasses Jekyll processing on GitHub Pages
 ├── .gitignore             # Git exclusions
@@ -79,7 +79,7 @@ No build command or environment variables are needed.
 | `Khang_Vo_Resume.pdf` | Replace with the latest resume while keeping the filename unchanged. |
 | `favicon.svg` | Browser-tab icon. |
 
-Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and videos are served directly from the media folders. The Aegis video loads on demand and uses a dedicated Aegis demo cover with a prominent play button; the mobile demo loads metadata only. Both players have native playback controls and do not autoplay. Starting one video pauses the other. Five clickable chapters below Aegis jump to specific sections and highlight the current chapter during playback. Update their labels and `data-chapter` start times in `index.html` when replacing the video.
+Keep project summaries and dialog descriptions consistent when updating the portfolio. Photographs and video are served directly from the media folders. The Aegis video loads on demand, uses a dedicated demo cover with a prominent play button, and retains native playback controls without autoplay. Five clickable chapters below Aegis jump to specific sections and highlight the current chapter during playback. Update their labels and `data-chapter` start times in `index.html` when replacing the video. The network topology can be opened and zoomed in the image viewer.
 
 Before publishing an update, check the mobile layout, keyboard navigation, project dialogs, resume download, and contact actions. Confirm that linked project materials are accessible to visitors without requesting additional permissions.
 
